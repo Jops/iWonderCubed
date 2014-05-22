@@ -1,0 +1,103 @@
+
+/********************************
+ *  BODY
+ *******************************/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: paskowy,visitor1,visitor2,foglihten,chocolatecake,Verdana,Geneva,'DejaVu Sans',sans-serif;
+    color:#555555;
+}
+
+.content {
+    width: 100%;
+}
+
+/********************************
+ *  CONTENT
+ *******************************/
+
+.main-container {
+}
+
+/********************************
+ *  CANVASES
+ *******************************/
+
+.canvasContainer {
+  overflow: hidden;
+  /*position: relative;*/
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*background-color: red;*/
+}
+
+#debugCanvas {
+  pointer-events: none
+}
+
+/********************************
+ *  HEADER
+ *******************************/
+
+.banner {
+    display: none;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+
+.banner-content {
+    border: 12px dashed #333333;
+    background-color: #DDFFFF;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/********************************
+ *  FOOTER
+ *******************************/
+
+.foot {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.foot .footer-content {
+    width: 426px;
+    margin: 0 auto;
+    font: 25px paskowy;
+    color:#113;
+}
+
+/********************************
+ *  NAVIGATION
+ *******************************/
+
+/********************************
+ *  ASIDE
+ *******************************/
+
+/********************************
+ *  FIGURES
+ *******************************/
+
+/********************************
+ *  RESPONSIVE - GENERAL
+ *******************************/
+
+@media only screen and (min-width: 600px) and (max-width: 1007px) {
+}
+
+@media only screen and (min-width: 320px)  and (max-width: 599px) {
+}
+
+@media only screen and (max-width: 1007px) {
+}

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'chocolatecake';
+    src: url('./fonts/chocolate_cake/chocolate-cake.ttf');
+}
+
+@font-face {
+    font-family: foglihten;
+    src: url('./fonts/gluk_foglihtenno04/FoglihtenNo04-070.otf');
+}
+
+@font-face {
+    font-family: paskowy;
+    src: url('./fonts/paskowy/Paskowy.ttf');
+}
+
+@font-face {
+    font-family: visitor1;
+    src: url('./fonts/visitor/visitor1.ttf');
+}
+
+@font-face {
+    font-family: visitor2;
+    src: url('./fonts/visitor/visitor2.ttf');
+}

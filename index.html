@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>HawkHead</title>
+        <link rel="stylesheet" href="./style/index.css"  type="text/css" />
+        <link rel="stylesheet" href="./style/font.css" type="text/css">
+        <!--[if lt IE 9]>
+        <script>
+            document.createElement('header');
+            document.createElement('nav');
+            document.createElement('article');
+            document.createElement('article');
+            document.createElement('aside');
+            document.createElement('footer');
+            document.createElement('figure');
+            document.createElement('figcaption');
+            document.createElement('hgroup');
+        </script>
+        <![endif]-->
+    </head>
+    <body class="content">
+
+        <section class="main-container">
+            <div id="canvases" class="canvasContainer">
+                <canvas id="demoCanvas"></canvas>
+                <canvas id="debugCanvas"></canvas>
+            </div>
+        </section>
+
+        <header class="banner">
+            <hgroup id="banner" class="banner-content">
+                <a href="http://www.hawk-head.com" style="text-decoration: none"><h1>Hawk-Head</h1></a>
+                <h2>html5 canvas engine development.</h2>
+            </hgroup>
+        </header>
+
+        <footer class="foot">
+            <div class="footer-content">Hawk-Head.com Feb 2014. Jonathan HW Halkett :: Jops.HawkHead@gmail.co.uk</div>
+        </footer>
+
+        <script src="http://code.createjs.com/createjs-2013.09.25.min.js"></script>
+        <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+        <script src='src/project_script_set.js'></script>
+
+    </body>
+</html>

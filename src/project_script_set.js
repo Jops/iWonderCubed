@@ -41,8 +41,8 @@ Object.createHandler = function( scope, handler )
 var g_queue = new createjs.LoadQueue(false);
 
 // hawk-head lib scripts
-var g_hawkheadEnginePrefix = '../../../';
-//var g_hawkheadEnginePrefix = 'src/lib/';
+var g_hawkheadEnginePrefix = '../../Dropbox/html5_Canvas/';
+// var g_hawkheadEnginePrefix = 'src/lib/';
 g_queue.loadManifest( [
                         // utils
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/debug/jhTraceWindow.js",
@@ -52,11 +52,22 @@ g_queue.loadManifest( [
                         // scenes
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/js/scenes/jhBaseScene.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/scenes/jhCreateJSScene.js",
+                        // box2d
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/jhBox2D.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/jhBox2DWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/collision/jhCollisionListener.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/destruction/jhDestructionListener.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DBodyWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DBoxWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DBallWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DPolygonWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DEdgeWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DCompoundWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/raycast/jhBox2DRayCastWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/joint/jhBox2DMouseDragWrapper.js",
+                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/resources/jhJsonParser.js",
                         // loading
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/preload/jhPreloadJS.js",
-                        // cam control
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/display/jhCamControl.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/filters/BoxBlurFilter.js"
                     ] );
 g_queue.addEventListener( 'complete', hawkhead_files_load );
 g_queue.load();
@@ -64,24 +75,12 @@ g_queue.load();
 function hawkhead_files_load()
 {
     g_queue.removeEventListener( 'complete', hawkhead_files_load );
+    g_queue.loadFile( "src/js/config/config.js" );
     g_queue.loadFile( "src/js/scenes/Scene.js" );
     g_queue.loadFile( "src/js/scenes/Preloader.js" );
     g_queue.loadFile( "src/js/scenes/Intro.js" );
-    g_queue.loadFile( "src/js/scenes/Game.js" );
-    g_queue.loadFile( "src/js/game/Swarm.js" );
-    g_queue.loadFile( "src/js/network/Socketer.js" );
-    g_queue.loadFile( "src/js/entities/DeadReckonner.js" );
-    g_queue.loadFile( "src/js/entities/Drone.js" );
-    g_queue.loadFile( "src/js/entities/Player.js" );
-    g_queue.loadFile( "src/js/entities/RemotePlayer.js" );
-    g_queue.loadFile( "src/js/entities/Bat.js" );
-    g_queue.loadFile( "src/js/entities/Barrier.js" );
-    g_queue.loadFile( "src/js/entities/HexiGrid.js" );
-    g_queue.loadFile( "src/js/entities/Hexi.js" );
-    g_queue.loadFile( "src/js/entities/Health.js" );
-    g_queue.loadFile( "src/js/spritesheets/BatSpawn.js" );
-    g_queue.loadFile( "src/js/spritesheets/BatFlight.js" );
-    g_queue.loadFile( "src/js/spritesheets/Hearts.js" );
+    g_queue.loadFile( "src/js/scenes/Demo.js" );
+    g_queue.loadFile( "src/js/demo/iWonderDemoWrapper.js" );
     g_queue.addEventListener( 'complete', project_includes_loaded );
     g_queue.load();
 }

@@ -7,11 +7,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: paskowy,visitor1,visitor2,foglihten,chocolatecake,Verdana,Geneva,'DejaVu Sans',sans-serif;
-    color:#555555;
+    background-color:#f1f1ee;
 }
 
 .content {
-    width: 100%;
+    /*width: 100%;*/
+    /*width: 1200px;*/
 }
 
 /********************************
@@ -26,18 +27,23 @@ body {
  *******************************/
 
 .canvasContainer {
-  overflow: hidden;
-  /*position: relative;*/
+  /*overflow: hidden;*/
+  position: relative;
+  width: 1200px;
+  height: 600px;
+
 }
 
 canvas {
+  /*display: block;*/
   position: absolute;
   top: 0;
-  left: 0;
+  left: 100px;
   /*background-color: red;*/
 }
 
 #debugCanvas {
+  display: none;
   pointer-events: none
 }
 
@@ -46,18 +52,18 @@ canvas {
  *******************************/
 
 .banner {
-    display: none;
-    position: absolute;
-    top: 20px;
+    /*display: none;*/
+    /*position: absolute;*/
+    /*top: 20px;*/
     width: 100%;
 }
 
 .banner-content {
-    border: 12px dashed #333333;
-    background-color: #DDFFFF;
-    width: 600px;
+    /*border: 12px dashed #333333;*/
+    /*background-color: #DDFFFF;*/
+    /*width: 1200px;*/
     margin: 0 auto;
-    padding: 0 30px;
+    /*padding: 0 30px;*/
 }
 
 /********************************
@@ -65,21 +71,31 @@ canvas {
  *******************************/
 
 .foot {
-    position: absolute;
-    bottom: 10px;
+    /*position: absolute;*/
+    /*bottom: 10px;*/
     width: 100%;
 }
 
 .foot .footer-content {
-    width: 426px;
+    /*width: 1200px;*/
     margin: 0 auto;
-    font: 25px paskowy;
-    color:#113;
+    /*font: 25px paskowy;*/
+    /*color:#113;*/
 }
 
 /********************************
  *  NAVIGATION
  *******************************/
+
+.load-more {
+    /*width: 100px;*/
+    /*margin: 0 auto;*/
+}
+
+.load-more-image {
+    /*width: 500px;*/
+    margin: 10px 600px;
+}
 
 /********************************
  *  ASIDE

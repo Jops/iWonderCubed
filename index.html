@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>HawkHead</title>
+        <title>iWonderCubed</title>
         <link rel="stylesheet" href="./style/index.css"  type="text/css" />
         <link rel="stylesheet" href="./style/font.css" type="text/css">
         <!--[if lt IE 9]>
@@ -21,27 +21,52 @@
     </head>
     <body class="content">
 
+        <header class="banner">
+            <div class="banner-content">
+                <img src="style/images/header.png">
+            </div>
+        </header>
+
         <section class="main-container">
             <div id="canvases" class="canvasContainer">
-                <canvas id="demoCanvas"></canvas>
-                <canvas id="debugCanvas"></canvas>
+                <canvas id="webglCanvas" width="1200px" height="600px"></canvas>
+                <canvas id="demoCanvas" width="1200px" height="600px"></canvas>
+                <canvas id="debugCanvas" width="1200px" height="600px"></canvas>
             </div>
         </section>
 
-        <header class="banner">
-            <hgroup id="banner" class="banner-content">
-                <a href="http://www.hawk-head.com" style="text-decoration: none"><h1>Hawk-Head</h1></a>
-                <h2>html5 canvas engine development.</h2>
-            </hgroup>
-        </header>
+        <div id="load-more-button" class="load-more">
+            <img class="load-more-image" src="style/images/loadmore.png"/>
+        </div>
 
         <footer class="foot">
-            <div class="footer-content">Hawk-Head.com Feb 2014. Jonathan HW Halkett :: Jops.HawkHead@gmail.co.uk</div>
+            <div class="footer-content">
+                <img src="style/images/footer.png">
+            </div>
         </footer>
 
+        <script src="src/lib/three.min.js"></script>
+        <script src="src/lib/Box2dWeb-2.1.a.3.min.js"></script>
+
         <script src="http://code.createjs.com/createjs-2013.09.25.min.js"></script>
-        <script src="http://localhost:8000/socket.io/socket.io.js"></script>
         <script src='src/project_script_set.js'></script>
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

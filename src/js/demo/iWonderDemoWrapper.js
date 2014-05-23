@@ -23,6 +23,8 @@
         height: 0,
         centre: null,
 
+        promoElm: null,
+
         mouseX: 0,
         mouseY: 0,
         mouseDown: false,
@@ -55,6 +57,7 @@
         THREE_renderer: null,
         THREE_aCUBES: null,
         THREE_cubeSize: config['three_cube_size'],
+        THREE_projector: null,
 
         init: function( _container, _width, _height )
         {
@@ -65,6 +68,9 @@
 
             this.initPhysics();
             this.initThree();
+
+            // promo element
+            this.promoElm = document.getElementById(config['demo_promo_id']);
 
             // load set
             this.imageSet = image_config();
@@ -138,6 +144,8 @@
             // this.THREE_camera.position.x = this.b2_width/2;
             this.THREE_camera.position.z = 500;
 
+            this.THREE_projector = new THREE.Projector();
+
             this.THREE_scene = new THREE.Scene();
         },
 
@@ -150,6 +158,7 @@
             texture.anisotropy = this.THREE_renderer.getMaxAnisotropy();
 
             var material = new THREE.MeshBasicMaterial( { map: texture } );
+            // material.opacity = 0.1;
 
             var cubeMesh = new THREE.Mesh( geometry, material );
             this.THREE_scene.add( cubeMesh );
@@ -189,6 +198,43 @@
             this.mouseX    = _x;
             this.mouseY    = _y;
             this.mouseDown = _down;
+        },
+
+        mouseClick: function()
+        {
+            // var vector = new THREE.Vector3( ( this.mouseX / window.innerWidth ) * 2 - 1, - ( this.mouseY / window.innerHeight ) * 2 + 1, 0.5 );
+            var vector = new THREE.Vector3( ( this.mouseX / this.width ) * 2 - 1, - ( this.mouseY / this.height ) * 2 + 1, 0.5 );
+                this.THREE_projector.unprojectVector( vector, this.THREE_camera );
+
+            var raycaster = new THREE.Raycaster( this.THREE_camera.position, vector.sub( this.THREE_camera.position ).normalize() );
+
+            var intersects = raycaster.intersectObjects( this.THREE_aCUBES );
+
+            if ( intersects.length > 0 ) {
+
+                // intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+                intersects[ 0 ].object.scale.x =
+                intersects[ 0 ].object.scale.y =
+                intersects[ 0 ].object.scale.z = 1.5;
+                createjs.Tween.get( intersects[ 0 ].object.scale, {override:true} )
+                                                   .to(    {    x:1.0,
+                                                                y:1.0,
+                                                                z:1.0 },
+                                                                1000,
+                                                                createjs.Ease.bounceOut );
+                // addthe promo
+                this.updatePromo();
+            }
+        },
+
+        updatePromo: function()
+        {
+            // alert(this.promoElm.style.left);
+            this.promoElm.style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+            this.promoElm.style.top = (600+this.mouseY)+"px";
+            this.promoElm.style.left = this.mouseX+"px";
+            var images = image_config();
+            document.getElementById('promo-text').innerHTML = images[(Math.floor(Math.random()*images.length))].text;//"Wish I stuck real text in here";
         },
 
         setDimensions: function( _w, _h )

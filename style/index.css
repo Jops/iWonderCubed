@@ -22,6 +22,16 @@ body {
 .main-container {
 }
 
+.promo-container {
+  position: absolute;
+  top: -500px;
+  left: -500px;
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  padding-left: 10px;
+}
+
 /********************************
  *  CANVASES
  *******************************/

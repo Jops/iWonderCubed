@@ -2,6 +2,7 @@ var config = {
     // demo
     demo_initial_cube_drop_total: 5,
     demo_load_more_button_id: 'load-more-button',
+    demo_promo_id: 'promo',
 
     // canvas objects
     canvas_webgl_canvas_name: 'webglCanvas',

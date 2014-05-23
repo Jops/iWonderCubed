@@ -45,6 +45,12 @@
             if( this.iWonderDemoWrapper ) this.iWonderDemoWrapper.keyPress( this.KEYS );
         },
 
+        mouseDownHandler: function( e )
+        {
+            this.$Scene.mouseDownHandler.apply( this, arguments );
+            if( this.iWonderDemoWrapper ) this.iWonderDemoWrapper.mouseClick();
+        },
+
         mouseMoveHandler: function( e )
         {
             this.$Scene.mouseMoveHandler.apply( this, arguments );

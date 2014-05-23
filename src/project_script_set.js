@@ -41,31 +41,20 @@ Object.createHandler = function( scope, handler )
 var g_queue = new createjs.LoadQueue(false);
 
 // hawk-head lib scripts
-var g_hawkheadEnginePrefix = '../../Dropbox/html5_Canvas/';
-// var g_hawkheadEnginePrefix = 'src/lib/';
+var g_hawkheadEnginePrefix = 'src/lib/';
 g_queue.loadManifest( [
                         // utils
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/debug/jhTraceWindow.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/js/utils/jhDictionary.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/js/utils/math/jhMathUtils.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/js/utils/math/jhVec2.js",
                         // scenes
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/js/scenes/jhBaseScene.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/scenes/jhCreateJSScene.js",
                         // box2d
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/jhBox2D.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/jhBox2DWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/collision/jhCollisionListener.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/destruction/jhDestructionListener.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DBodyWrapper.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DBoxWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DBallWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DPolygonWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DEdgeWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/body/jhBox2DCompoundWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/raycast/jhBox2DRayCastWrapper.js",
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/joint/jhBox2DMouseDragWrapper.js",
-                        g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/physics/box2d/resources/jhJsonParser.js",
                         // loading
                         g_hawkheadEnginePrefix+"hawk-head/com/hawk-head/createjs/preload/jhPreloadJS.js",
                     ] );
